@@ -1,3 +1,6 @@
+body {
+    background-color: #b4fae1;
+}
 
 section, p {
     display: block;
@@ -84,3 +87,5 @@ nav a:focus {
     display: inline-block;
     padding: 10px;
 }
+
+
