@@ -107,3 +107,37 @@ nav a:focus {
     font-style: normal;
 
 }
+
+.left {
+    text-align: left;
+}
+.right {
+    text-align: right;
+}
+
+.columns {
+    column-count: 3;
+    column-gap: 40px;
+    column-width: 100px;
+    column-rule: dashed 4px #00c964;
+}
+
+.group {
+    padding: 5px;
+    break-inside: avoid;
+}
+
+.columnheader {
+    column-span: all;
+}
+
+img.column1 {
+    width: 40%;
+
+}
+
+img.column3 {
+    width: 30%;
+    float: right;
+    
+}
