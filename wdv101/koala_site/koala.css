@@ -1,5 +1,6 @@
 body {
     background-color: #b4fae1;
+    font-family: Verdana, Geneva, Arial; 
 }
 
 section, p {
@@ -89,3 +90,20 @@ nav a:focus {
 }
 
 
+@font-face {
+    font-family: 'aganregular';
+    src: url(fonts/agane_55_roman-webfont.woff2) format('woff2'),
+        url(fonts/agane_55_roman-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'aganbold';
+    src: url(fonts/agane_65_bold-webfont.woff2) format('woff2'),
+        url(fonts/agane_65_bold-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
