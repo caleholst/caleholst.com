@@ -159,10 +159,6 @@ img.left {
     float: left;
 }
 
-img.center {
-    float: center;
-}
-
 img.top {
     float: inline-start;
 }
