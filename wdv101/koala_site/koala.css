@@ -132,12 +132,65 @@ nav a:focus {
 }
 
 img.column1 {
-    width: 40%;
+    width: 0%;
 
 }
 
 img.column3 {
-    width: 30%;
+    width: 20%;
     float: right;
     
+}
+
+img.box { 
+    background-color: rgb(70, 253, 110);
+    width: 200px;
+    border: 15px ridge rgb(68, 241, 135);
+    padding: 20px;
+    margin: 10px;
+}
+
+
+img.right {
+    float: right;
+}
+
+img.left {
+    float: left;
+}
+
+img.center {
+    float: center;
+}
+
+img.top {
+    float: inline-start;
+}
+
+video.left {
+    float: left;
+}
+video.right {
+    float: right;
+}
+
+h2.boxh2 {
+    width: 900px;
+    border-top: 5px solid rgb(0, 90, 35);
+    padding: 10px;
+    
+}
+
+h3.boxh3 { 
+    width: 700px;
+    border-top: 5px solid rgb(5, 170, 68);
+    padding: 15px;
+    margin: 10px;
+}
+
+h4.boxh4 { 
+    width: 200px;
+    border-top: 5px solid rgb(2, 128, 50);
+    padding: 10px;
+    margin: 15px;
 }
