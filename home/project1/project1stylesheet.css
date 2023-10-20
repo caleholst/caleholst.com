@@ -1,0 +1,46 @@
+
+c{
+    position:relative;
+    background:red;
+    max-height:225px; 
+    float:right;
+    width:315px;
+    height:300px;
+    overflow:hidden;
+    overflow-y:auto;
+    
+}
+.card-home{
+    position:relative;
+    left:0;
+        animation: scroll 50s linear 0s infinite;
+    display: flex;
+    flex-wrap: nowrap;
+}
+span {
+    min-width:500px;
+    min-height:300px;
+    display: inline-block;
+    color:rgb(255, 255, 255);
+    margin:5px;
+    background:rgb(0, 0, 0);
+    border: 10px ridge rgb(253, 15, 15);
+    
+}
+
+.a {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    line-height: 300px;
+}
+
+
+@keyframes scroll {
+    100% { left: -139%; }  
+}
+
+.container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
