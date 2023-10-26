@@ -1,0 +1,51 @@
+
+body {
+    margin:0;
+    background-color: #333;
+}
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1f1f1f;
+    position: fixed;
+    width: 100%;
+}
+
+.listone {
+    float: left;
+}
+
+.listone a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    float: left;
+}
+
+.listone a:hover {
+    background-color: #1a1919;
+}
+
+.first a {
+    background-color: #d32727 !important;
+}
+
+
+.first a:hover {
+    background-color: #962424 !important;
+}
+
+
+
+li.right{
+    float:right
+}
+.header {
+    height:300px;
+    background:url(images/germanflag.jpg) repeat-x 0 0;
+}
+
