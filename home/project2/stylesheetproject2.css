@@ -2,6 +2,7 @@
 body {
     margin:0;
     background-color: #333;
+    color:white
 }
 .navbar {
     list-style-type: none;
@@ -9,7 +10,6 @@ body {
     padding: 0;
     overflow: hidden;
     background-color: #1f1f1f;
-    position: fixed;
     width: 100%;
 }
 
@@ -31,12 +31,12 @@ body {
 }
 
 .first a {
-    background-color: #d32727 !important;
+    background-color: #d32727;
 }
 
 
 .first a:hover {
-    background-color: #962424 !important;
+    background-color: #962424;
 }
 
 
@@ -49,3 +49,51 @@ li.right{
     background:url(images/germanflag.jpg) repeat-x 0 0;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 10px;
+    grid-column-gap: 50px;
+    padding: 15px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.grid-item {
+    background-color: rgba(196, 13, 13, 0.8);
+    border: 5px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: left;
+}
+
+.gridHeader {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 70px;
+}
+
+.smallerText {
+    font-size: 70%;
+}
+.largerText {
+    font-size: 120%;
+}
+
+.right {
+    float: right;
+}
+
+.sound {
+    width: 100%;
+    margin-top: 10px;
+} 
+
+.soundIcon {
+    padding-top: 30px;
+    width: 50px;
+}
+
+.pointer {
+    cursor: pointer
+}
