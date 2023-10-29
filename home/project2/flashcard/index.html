@@ -1,20 +1,15 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="A German Learning Site for Cale">
-        <meta name="author" content="Cale Holst">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>German Site </title>
-        <link rel="stylesheet" type="text/css" href="/home/project2/stylesheetproject2.css">
-    </head>
-
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>German Site</title>
+    <link rel="stylesheet" type="text/css" href="flashcardstylesheet.css">
+</head>
+<body>
+    <header>
         <div class="header">
             <img src="/home/project2/images/germanflag.jpg" alt="German Flag" />
         </div>
-    
         <nav>
             <ul class="navbar listone">
                 <li class="first"><a href="/home/project2/">Home</a></li>
@@ -24,6 +19,12 @@
                 <li class="right"><a href="/home">Return to Main Page</a></li>
             </ul>
         </nav>
-    
-    </body>
+    </header>
+    <div class="carousel" id="carousel-container">
+        <!-- Cards will be loaded here dynamically -->
+    </div>
+    <button class="prev-button">Previous</button>
+    <button class="next-button">Next</button>
+    <script src="flashcard.js"></script>
+</body>
 </html>
