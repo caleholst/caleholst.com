@@ -190,3 +190,9 @@ h4.boxh4 {
     padding: 10px;
     margin: 15px;
 }
+
+.container {
+    width: 950px;
+    padding: 20px;
+    margin: 0 auto;
+}
