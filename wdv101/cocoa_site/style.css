@@ -50,3 +50,23 @@ h2, h3 {
     margin: 10px;
     border-top: 3px solid #000000;
 }
+
+.imgright {
+    float: right;
+}
+
+.imgleft {
+    float: left;
+}
+/* I made the class to show i know how to do it, but float left doesnt really work well with what ive made so I'm not going to use it, the website looks a lot better without it */
+
+img {
+    padding: 10px;
+    margin: 5px;
+}
+
+p {
+    padding: 10px;
+    margin: 10px;
+}
+
