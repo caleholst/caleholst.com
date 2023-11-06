@@ -196,3 +196,35 @@ h4.boxh4 {
     padding: 20px;
     margin: 0 auto;
 }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.column figure{
+    flex: 33%;
+    padding: 0;
+}
+
+
+.column img {
+    margin-top: 0px;
+    vertical-align: middle;
+}
+
+figure {
+    border: 5px #000000 solid;
+    
+    margin: 28px;
+}
+
+figcaption {
+    background-color: rgb(34,139,34);
+    color: white;
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
+
+}
