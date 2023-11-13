@@ -1,3 +1,13 @@
+html {
+    box-sizing: border-box;
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+}
 body {
     background-color: rgb(170, 168, 171);
     
@@ -63,15 +73,8 @@ body {
     gap: 30px;
 }
 
-.firstColumn {
-    flex: 1;
-}
-
-.secondColumn {
-    flex: 1;
-    
-}
-
+.firstColumn,
+.secondColumn,
 .thirdColumn {
     flex: 1;
 }
@@ -81,4 +84,31 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .container { width: 100%}
+    .columnLayout {
+        flex-direction: column;
+    }
+    /* I added it so the nav bar is made verticle for smaller screens to make it look nicer. */
+    .navStyle {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navStyle a {
+        display: block; 
+        text-align: center; 
+        text-decoration: none;
+        color: white;
+        line-height: 2;
+        transition: background-color 0.3s ease;
+    }
+
+    .navStyle a:hover {
+        background-color: #313030;
+        padding: 10px;
+        
+    } 
 }
