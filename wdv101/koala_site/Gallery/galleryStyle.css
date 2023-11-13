@@ -1,0 +1,39 @@
+html {
+    box-sizing: border-box;
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+}
+
+[class*="col-"] {
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .container { width: 100%}
+    .col-s-1 {
+        width: 100%;
+        background-color: rgb(77, 235, 77);
+    }
+    
+    .col-s-1 img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .row { 
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .col-3 {width: auto;}
+    .col-3 {height: auto;}
+}

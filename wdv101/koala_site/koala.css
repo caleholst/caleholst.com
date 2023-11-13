@@ -198,9 +198,9 @@ h4.boxh4 {
 }
 
 .row {
+    margin-top: 10px;
     display: flex;
-    flex-wrap: wrap;
-    
+    gap: 10px;
 }
 
 .column figure{
@@ -208,16 +208,23 @@ h4.boxh4 {
     padding: 0;
 }
 
+.column { 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
 
 .column img {
-    margin-top: 0px;
     vertical-align: middle;
 }
 
 figure {
     border: 5px #000000 solid;
     
-    margin: 28px;
+    margin: 0;
 }
 
 figcaption {
@@ -226,5 +233,5 @@ figcaption {
     font-style: italic;
     padding: 2px;
     text-align: center;
-
 }
+
