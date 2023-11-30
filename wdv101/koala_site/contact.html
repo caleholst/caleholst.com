@@ -12,11 +12,67 @@
     </head>
 
     <body>
-        <header>
-            <img src="images/koala_banner.jpg" width="100%">
-            <h1 class="large center upper":>Contact Us</h1>
-        </header>
+        <div class="container">
+            <header>
+                <img src="images/koala_banner.jpg" width="100%">
+                <h1 class="large center upper":>Contact Us</h1>
+            </header>
 
+            <nav>
+                <ul class="navbar"> 
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="/wdv101/koala_site/Gallery/">Gallery</a></li>
+                    <li><a href="adopt.html">Adopt</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+
+            <form method="post" action="form_response_basic.php">
+                <legend class="bold">Contact Us!</legend>
+                <p style="font-style:italic;">Information about koalas</p> 
+                <fieldset>
+                <div>
+                    <label for="fname">First name:</label>
+                    <input type="text" id="fname" name="fname" value=""><br>
+                </div>
+                
+                <div>
+                    <label for="lname">Last name:</label>
+                    <input type="text" id="lname" name="lname" value=""><br>
+                </div>
+                
+                <div>
+                    <label for="email" >Email Address:</label>
+                    <input type="text" id="email" name="Email" placeholder="example@gmail.com" value=""><br>
+                </div>
+
+                <div>
+                    <label for="topic">Topic:</label> 
+                    <select id="topic" name="Topic"> 
+                        <option value="option1"></option>
+                        <option value="option1">Koala Question</option>
+                        <option value="option2">Service</option>
+                        <option value="option3">Concerns</option>
+                    </select> <br> <br>
+                </div>
+
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="Message" style="width: 250px; resize: vertical;" rows="4"></textarea> <br>
+                </div>
+                </fieldset>
+                <div id="button-container">
+                    <input type="submit" id="submit-button" name="button" value="Submit">
+                    <input type="reset" id="reset-button" name="button" value="Reset">
+                </div>
+        
+            </form>
+
+        </div>
 
     </body>
+
 </html>
