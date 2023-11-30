@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>contact form response</title>
 <style type="text/css">
+	
 #container  {
 			width: 800px;
 			border: 1px solid black;
@@ -15,6 +16,7 @@
 	color: #F00;
 }
 </style>
+<link rel="stylesheet" href="koala.css">
 </head>
 
 <body>
