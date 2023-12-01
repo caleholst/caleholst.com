@@ -1,0 +1,74 @@
+form {		
+    display: flex ;
+    flex-direction: column ; 
+    background-color:#BDCFDB;;
+    width:90%;
+    padding:0.5em;
+    margin:1.5em auto;
+    border:thin solid black;
+    border-radius:10px;
+
+}
+
+
+.flex-form {
+        width: 650px;
+        display: flex;
+        margin-bottom:0.3em;
+        }
+
+
+
+.flex-form label {
+    flex-direction: column;
+    text-align: right ;
+    flex:2;
+    margin-top: 0.5em;
+    margin-right:0.5em;
+}	
+
+.flex-form input, select, textarea {
+    flex: 3;
+    
+}
+
+
+
+.flex-radio  {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left:1.8em;
+    margin-top:1.2em;
+    margin-bottom:1.2em;
+}          
+
+.flex-radio  label {
+    margin-right:1.8em;}
+
+.flex-buttons  {
+        display:flex;
+        justify-content: center;
+        }
+
+
+
+textarea {
+height:50px;
+}
+
+fieldset {	display: flex  ;
+    flex-direction: column    ;
+    margin:0.5em;
+    padding:0.5em;
+    }
+    
+/* End flex css */			
+
+section  {
+    padding:0.5em;
+    }
+
+img  {
+
+}
