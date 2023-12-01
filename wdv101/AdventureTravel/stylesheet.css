@@ -13,7 +13,63 @@ body {
     margin: 0 auto;
 }
 
+[class*="col-"] {
+    width: 100%;
+}
+@media only screen and (max-width: 480px) {
+    .container { width: 100% }
 
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .flex-container {
+        flex-direction: column;
+        }
+    
+    
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    
+}
+@media only screen and (max-width: 670px) {
+    .container { width: 100% }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flex-container {
+        flex-direction: column;
+        }
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container { width: 100% }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .container { width: 100% }
+}
 .navbar {
     display: flex;
     justify-content: space-between;
