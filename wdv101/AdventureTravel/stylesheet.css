@@ -7,6 +7,8 @@
 body { 
     background-color: #bfc2bd;
 }
+
+
 .container {
     width: 950px;
     padding: 0;
@@ -35,7 +37,11 @@ body {
         display: block;
         margin: 0 auto;
     }
-    
+
+    .navStyle a:hover {
+        background-color: #fdfffe;
+        padding: 5px;
+    }
 }
 @media only screen and (max-width: 670px) {
     .container { width: 100% }
@@ -53,6 +59,10 @@ body {
         height: auto;
         display: block;
         margin: 0 auto;
+    }
+    .navStyle a:hover {
+        background-color: #f0fdf8;
+        padding: 5px;
     }
 }
 
@@ -95,7 +105,7 @@ body {
 }
 
 .navStyle a:hover {
-    background-color: #313030;
+    background-color: #146e4f;
     padding: 20px; 
 }
 
@@ -128,14 +138,14 @@ body {
 }
 
 .smallImg {
-    width: 390px;
+    width: 400px;
 }
 
 .flex-item {
     flex: 1;
     
     box-sizing: border-box;
-    border: 6px solid#0f2438;
+    border: 6px solid#000000;
     margin-top: 10px;
     
 }
@@ -144,12 +154,12 @@ body {
     flex: 2;
     padding: 20px;
     box-sizing: border-box;
-    border: 6px solid#0f2438;
+    border: 6px solid#000000;
     margin-top: 10px;
 }
 
 .columnColor1 {
-    background-color: #54a15e ;
+    background-color: #46854e ;
 }
 
 .footer {
@@ -158,4 +168,42 @@ body {
     margin-right: auto;
     width: 50px;
     height: 50px
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.noLink {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.overline {
+    text-decoration: overline #18805C;
+}
+
+.textPadding {
+    padding: 10px;
+    margin: 5px;
+}
+
+li {
+    padding: 5px;
+    list-style: none;
+}
+
+p {
+    padding: 10px;
+    margin: 5px;
+    line-height: 20px;
+}
+
+h4 {
+    padding: 10px;
+    margin: 5px;  
 }
