@@ -1,0 +1,17 @@
+body {
+    background-color: #1a1a1a;
+    font-family: Verdana, Geneva, Arial;
+    color: #ffffff;
+}
+
+.center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration-line: underline;
+}
