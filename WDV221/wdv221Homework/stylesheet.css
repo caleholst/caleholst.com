@@ -52,3 +52,36 @@ body {
 @media only screen and (max-width: 950px) {
     .container { width: 100% }
 }
+
+.autobox { 
+    width: auto;
+    height: auto;
+    padding: 30px;
+    margin: 10px;
+    border: 10px ridge rgb(255, 255, 255);
+    background-color: #7c1a67;
+}
+.autobox + .autobox { /* fixing the margins on the boxes*/
+    margin-top: 15px;
+}
+
+.group {
+    padding: 0px;
+    break-inside: avoid;
+}
+
+a:link {
+    color: rgb(8, 133, 35);
+}
+
+a:visited {
+    color: rgb(207, 138, 10)
+}
+
+a:hover {
+    color: rgb(172, 112, 3);
+}
+
+a:active {
+    color: rgb(222, 95, 226)
+}
