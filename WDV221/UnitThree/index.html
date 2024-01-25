@@ -1,0 +1,86 @@
+
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro JavaScript</title>
+
+<style>
+
+div#container	{
+	width:960px;
+	margin:auto;
+	padding:10px;
+	background-color:white;	
+	border:thin solid black;
+}
+</style>
+
+<script>	
+
+	let studentName = "";	//global variable to be used later
+	let studentEmail = "";	//global variable to be used later
+
+	function displayGreeting() {
+		alert("Hello! Welcome to WDV221 Intro Javascript");	
+	}
+	
+	function getStudentName() {
+		studentName = prompt("Please enter your name");	
+	}
+
+    function getStudentEmail() {
+        studentEmail = prompt("Please enter your student email")
+    }
+
+    function displayEmail() {
+        alert(studentEmail)
+    }
+
+    function printStudentInfo() {
+        document.writeln('<p>' + studentName + '</p>');
+        document.writeln('<p>' + studentEmail + '</p>');
+    }
+	
+	function displayEmailServer(){
+		alert("DMACC email address is " + studentEmail);
+	}
+
+</script>
+
+
+
+</head>
+
+<body>
+<div id="container">
+
+  <h1>WDV221 Intro JavaScript</h1>
+  <h2>Unit-3 Introduction to JavaScript functions</h2>
+
+  <p>Tasks:  </p>
+  <p>1. Run the displayGreeting( ) as a run time script.  </p>
+  <script>displayGreeting()</script>
+  <p>2. Run the getStudentName( ) as a run time script.</p>
+  <script>getStudentName()</script>
+  <p>3. Write a function called getStudentEmail( ). The function should use the prompt( ) to ask the user to enter their DMACC Email address. Store the returned valued in the global studentEmail variable that has already been defined.</p>
+  <p>4. Run the getStudentEmail( ) as a run time script.</p>
+  <script>getStudentEmail()</script>
+  <p>5. Write a function called displayEmail( ). The function will display the global studentEmail variable with a message &quot;Student Email:&quot; in an alert. The button below will call the function when clicked.</p>
+  <p>
+	<input type="button" name="button" id="button" value="Display Email" onClick="displayEmail()">
+  </p>
+  <p>6. Write a function called printStudentInfo( ). The function should write the studentName and studentEmail to the web page. Each in their own paragraph.  </p>
+  <script>
+    printStudentInfo()
+  </script>
+  <p>7. Fix the  button element that will run the displayEmailServer( ) with a click event handler.</p>
+  <p>
+    <input type="button" name="button3" id="button3" value="Display Email Server" onClick="displayEmailServer()">
+  </p>
+  <p>&nbsp;</p>
+</div>
+
+<h2>&nbsp;</h2>
+</body>
+</html>
