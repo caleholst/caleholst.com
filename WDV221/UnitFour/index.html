@@ -1,0 +1,134 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>WDV221 Intro Javascript - Unit 4</title>
+
+	<style>
+		span	{font-style: italic;}
+	</style>
+
+	<script>
+
+		/*Define and assign the following global variables
+			
+			schoolName  assign a value of "DMACC"
+			firstName	assign a value of your first name
+			lastName	assign a value of your last name
+		*/
+        let schoolName = "DMACC";
+        let firstName  = "Cale";
+        let lastName = "Holst";
+        let totalSales = 3435.6
+	
+		function  formatRosterName(in_first_name, in_last_name) {
+		
+			return in_last_name + ", " + in_first_name;
+		
+		}
+	
+		function printSchoolRoster(inFirstName, inLastName, inSchoolName) {
+		
+			let rosterName = formatRosterName(inFirstName, inLastName);
+			let detailLine = rosterName + " " + inSchoolName;
+			return detailLine;
+		
+		}
+		
+		function displayName(fName, lName) {
+		
+			alert("Name: " + fName + " " + lName);
+		
+		}
+
+        function displaySchool(invalue) {
+            console.log(invalue)
+        }
+
+        function printName(inFirstName, inLastName) {
+            let formattedName = inFirstName + " " + inLastName;
+            console.log(formattedName);
+        }
+
+        function formatCurrency(inNumber) {
+            let formattedCurrency;
+            return "$" + inNumber.toFixed(2); // I didnt see the currecny formatting the problem refered to so i just did this. 
+        }
+	
+	</script>
+
+
+</head>
+
+<body>
+	<h1>WDV2221 Intro Javascript</h1>
+	<h2>Unit-4 Assignment - Functions &amp; Parameters </h2>
+	<h3>Directions:</h3>
+
+	<p>Instructions: Define and assign the variables based upon the instructions in the script tags on this page.</p>
+
+	<p>Example 1</p>
+    
+	<ol>
+		<li>Create a runtime script that will call formatRosterName().</li>
+		<li>Place the script so that it will display the name in the following heading.</li>
+		<li>Pass the global variables firstName and lastName into the function.</li>
+	</ol>
+	
+	<h4>Student Name: <script>
+        document.writeln(formatRosterName(firstName, lastName)); // should I have made the function print it or is this the way you wanted it. 
+        </script>
+        </h4>
+	
+	<p>Example 2</p>
+	<ol>
+		<li>Create a button called "Display Name".</li>
+		<li>Assign an onclick event handler to the button that will call displayName().</li>
+		<li>Pass the global variables firstName and lastName into the function.</li>
+		<li>Fix the function so that there is proper spacing</li>
+	</ol>	
+    <button onclick="displayName(firstName, lastName)">Click me</button>
+	
+	<p>Example 3</p>
+	<ol>
+		<li>Create a function called displaySchool( ).
+			<ul>
+                <li>the function will accept one input parameter called inValue</li>
+                <li>the function will display the input value on the console using console.log().</li>
+			</ul>
+		</li>
+		<li>Call this function using a button and the onclick event handler. Pass in the schoolName variable as the parameter to the displaySchool().</li>
+	</ol>
+    <button onclick="displaySchool(schoolName)">Click me</button>
+	
+	<p>Example 4</p>
+	<ol>
+		<li>Create a function called printName( ).
+			<ul>
+                <li>the function will accept two parameters, inFirstName and inLastName</li>
+                <li>concatenate the names into a single string formatted as "firstName lastName"</li>
+                <li>display the result string to the console using console.log()</li>
+			</ul>
+		</li>
+		<li>Call this function during runtime. Pass in the firstName and lastName variables as the parameters.</li>
+	</ol>
+    <script>
+        printName(firstName, lastName);
+    </script>
+
+	<p>Example 5</p>
+	<ol>
+		<li>Create a global variable called totalSales. Assign it a value of 3435.6. It should be numeric data type.</li>
+		<li>Create a function called formatCurrency().
+			<ul>
+				<li>the function will accept one input parameter called inNumber</li>
+				<li>the function will use the currency formatting discussed in this unit</li>
+				<li>use a 'return' statement to deliver the formatted number to where the function is called</li>
+			</ul>
+		<li>Use a runtime script to display the formatted number instead of the message in the heading shown below. </li>
+	</ol>
+	<h3>Your Total Sales: <script>  document.writeln(formatCurrency(totalSales))</script></h3>
+		
+</body>
+</html>
