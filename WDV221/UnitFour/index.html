@@ -52,8 +52,9 @@
         }
 
         function formatCurrency(inNumber) {
-            let formattedCurrency;
-            return "$" + inNumber.toFixed(2); // I didnt see the currecny formatting the problem refered to so i just did this. 
+            
+            let formattedCurreny = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(inNumber)
+            return formattedCurreny
         }
 	
 	</script>
