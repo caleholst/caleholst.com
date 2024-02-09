@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-1: Event Handlers</title>
+</head>
+<body onload="setupEventHandlers()">
+    <script>
+        function handleButtonClick() {
+            console.log("Button clicked");
+        }
+
+        function handleMouseOver() {
+            console.log("Button mouseover");
+        }
+
+        function handleMouseOver2() {
+            console.log("Paragraph mouseover");
+        }
+
+        function handleMouseOut() {
+            console.log("Paragraph mouseout");
+        }
+
+        function handleImageClick() {
+            console.log("Image clicked");
+        }
+
+        function handleSelectChange() {
+            console.log("Select option changed");
+        }
+        function setupEventHandlers() {
+            let image = document.querySelector('#imageOne');
+            image.addEventListener('click', handleImageClick);
+
+            let select = document.querySelector('#selectOne');
+            select.addEventListener('change', handleSelectChange);
+        }
+
+
+        
+    </script>
+    
+
+    <button onclick="handleButtonClick()" onmouseover="handleMouseOver()">Click Me</button>
+
+    <p id="paragraphElement" onmouseover="handleMouseOver2()" onmouseleave="handleMouseOut()">Hover over me</p>
+
+    <img id="imageOne" src="/WDV221/UnitFive/images/picture12.png" alt="Penguin picture">
+    
+    <br> 
+
+    <select id="selectOne"> 
+        <option> Option1 </option>
+        <option> Option2 </option>
+        <option> Option3 </option>
+    </select>
+
+</body>
+</html>
