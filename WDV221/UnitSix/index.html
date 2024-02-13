@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Processing</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+    <script>
+        function productPrice() {
+            var productSelect = document.querySelector("#products");
+            var selectedProduct = productSelect.options[productSelect.selectedIndex];
+            console.log("Selected Product: " + selectedProduct.textContent);
+            console.log("Product Cost: " + selectedProduct.value);
+        }
+        function processForm(){
+            console.log("Company name: " +  document.querySelector("#companyName").value);
+            console.log("Contact Email: " + document.querySelector("#contactEmail").value);
+            console.log("Contact Phone: " + document.querySelector("#contactPhone").value);
+            console.log("Order Date: " + document.querySelector("#orderDate").value);
+            console.log("Product Cost: " + document.querySelector("#products").value);
+            console.log("Qauntity: " + document.querySelector("#quantity").value);
+            console.log("Discount: " + document.querySelector("#raidoGroup input[name='raidoGroup']:checked").value);
+
+            
+
+        }
+    </script>
+</head>
+    <body>
+        <div class="container">
+            <form method="post" action="#">
+                <div class="form-row">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" name="companyName" id="companyName" placeholder="Company Name">
+                </div>  
+
+                <div class="form-row">
+                    <label for="contactEmail">Contact Email</label>
+                    <input type="email" name="contactEmail" id="contactEmail" placeholder="Contact Email">
+                </div>
+
+                <div class="form-row">
+                    <label for="contactPhone">Contact Phone Number</label>
+                    <input type="tel" name="contactPhone" id="contactPhone" placeholder="Contact Phone">
+                </div>
+
+                <div class="form-row">
+                    <label for="orderDate">Order Date </label>
+                    <input type="date" name="orderDate" id="orderDate" placeholder="Order Date">
+                </div>
+
+                <div class="form-row">
+                    <label for="products">Products</label>
+                    <select name="products" id="products" onchange="productPrice()">
+                        <option value=""></option>
+                        <option value="2.49">Name Badge Lanyard </option>
+                        <option value="1.34">Customized Pen </option>
+                        <option value="3.87">Can Koozie </option>
+                        <option value="0.48">Custom Decal </option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="quantity">Order Quantity</label>
+                    <input type="number" id="quantity" name="quantity" min="1" placeholder="Quantity">
+                </div>
+                
+                <div class="form-row">
+                    <label for="raidoGroup"> Discounts</label>
+                    <fieldset id="raidoGroup" >
+                        <label>No Discount </label>
+                        <input type="radio"  value="0" name="raidoGroup" checked>
+                        <label>10% Discount </label>
+                        <input type="radio" value="10" name="raidoGroup">
+                        <label> 15% Discount </label>
+                        <input type="radio" value="15" name="raidoGroup">
+                    </fieldset>
+                </div>
+                
+                <div class="form-row">
+                    <button type="button" value="Submit" onclick="processForm()">Process Order</button>
+
+                    <button type="reset">New Form </button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

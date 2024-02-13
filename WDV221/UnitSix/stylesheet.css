@@ -1,0 +1,64 @@
+html {
+    box-sizing: border-box;
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: rgb(72, 73, 73);
+}
+
+[class*="col-"] {
+    width: 100%;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 480px) {
+    .container { width: 100% }
+    .form-row > fieldset {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container { width: 100% }
+    
+}
+
+@media only screen and (max-width: 960px) {
+    .container { width: 100% }
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.form-row > label {
+    padding: 7px;
+    flex: 1;
+    color: #ffffff;
+}
+.form-row > input, select {
+    flex: 2;
+}
+
+.form-row > fieldset {
+    color: #ffffff;
+    flex: 2;
+    border: none;
+    padding: 0;
+}
+
+.form-row > button {
+    align-items: center;
+    padding: 10px;
+    margin:  5px;
+}
