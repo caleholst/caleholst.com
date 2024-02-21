@@ -9,12 +9,64 @@
 		}
 
 		span {
-			
+			background-color: rgb(0, 255, 76);
 		}
 	</style>
 
 	<script>
 		let count = 0;	
+		
+
+		function getValueOne() {
+			let numberOne = document.querySelector("#value1").value;
+			document.querySelector("#displayValue1").value = numberOne;
+		}
+
+		function getValueTwo() {
+			let numberTwo = document.querySelector("#value2").value;
+			document.querySelector("#displayValue2").value = numberTwo;
+		}
+
+		function multiplyValues() {
+			let numberOne = document.querySelector("#value1").value;
+			let numberTwo = document.querySelector("#value2").value;
+
+			let solution = numberOne * numberTwo;
+
+			document.querySelector("#displayMultiplication").textContent = solution;
+		}
+
+		function addValues() {
+			let numberOne = document.querySelector("#value1").value;
+			let numberTwo = document.querySelector("#value2").value;
+
+			let solution = parseFloat(numberOne) + parseFloat(numberTwo)
+
+
+			document.querySelector("#displayAddition").textContent = solution;
+		}
+
+		function addToCount() {
+			count = count + 1 // can you not do count++ in javascript ? 
+			document.querySelector("#counterAdder").textContent = count;
+		}
+
+		function randomNumberGenerator() { 
+			let randomInt = Math.floor(Math.random() * 10) + 1;
+			document.querySelector("#randomNumber").textContent = randomInt;
+		}
+
+		function clearFields() {
+			let clearField = ""
+			document.querySelector("#displayMultiplication").textContent = clearField;
+			document.querySelector("#displayAddition").textContent = clearField;
+			document.querySelector("#counterAdder").textContent = clearField;
+			document.querySelector("#randomNumber").textContent = clearField;
+
+		}
+
+
+
 	</script>
 </head>
 
@@ -25,49 +77,63 @@
 <p>Include a comment in each script with the exercise number and a description of what the script is supposed to do.</p>
 	<hr />
 <h3>Instructions</h3>
+
 <p>Use the form fields for the input values. For each of the following exercises create a function what will be activated by the button.  </p>
+
 <p>For problems 1. and 2. display the resuts into the provided text fields.</p>
+
 <p>For problems 3., 4. and 5. display the results in the span elements. Provide some CSS styling to highlight the displayed content. </p>
+
 <p>The Reset button should clear all form fields and all display fields</p>
+
 <form name="form1" method="post" action="">
-	  <p>Enter a number for value1:
-		<input type="text" />
-	  </p>
-	  <p>Enter a number for value 2:
-		<input type="text" />
-	  </p>
-	  <p>1.
-		<input type="submit" value="Display value1" />
+	
+	<p>Enter a number for value1:
+		<input type="text" value="" id="value1" />
+	</p>
+
+	<p>Enter a number for value 2:
+		<input type="text" value="" id="value2" />
+	</p>
+
+	<p>1.
+		<input type="button" value="Display value1" onclick="getValueOne()" />
 		Display the value you entered for value1:
-		<input type="text"/>
-	  </p>
-	  <p>2.
-		<input type="submit" value="Display value2" />
+		<input type="text" id="displayValue1" />
+	</p>
+	
+	<p>2.
+		<input type="button" value="Display value2"  onclick="getValueTwo()" />
 		Dislplay the value you entered for value2:
-		<input type="text"/>
-	  </p>
-	  <p>3.
-		<input type="submit" value="Multiply" />
+		<input type="text" id="displayValue2"/>
+	</p>
+
+	<p>3.
+		<input type="button" value="Multiply" onclick="multiplyValues()" />
 		Display the value of value1 * value2:
-		<span></span>
-	  </p>
-	  <p>4.
-		<input type="submit" value="Add" />
+		<span id="displayMultiplication"></span>
+	</p>
+
+	<p>4.
+		<input type="button" value="Add" onclick="addValues()" />
 		Display the results of value1 + value2 in the following textfield.
-		<span></span>
-	  </p>
-	  <p>5.
-		<input type="submit" value="Increment count" />
+		<span id="displayAddition"></span>
+	</p>
+
+	<p>5.
+		<input type="button" value="Increment count" onclick="addToCount()"/>
 		Use the increment operator to add 1 to count and display the new value of count.
-		<span></span>
-	  </p>
-	  <p>
-		6. <button>Random Number</button> Display a random number between 1 and 10.
-		<span></span>
-	  </p>
-	  <p>
-		<input type="reset" name="Reset" id="button" value="Try Again">
-	  </p>
+		<span id="counterAdder"></span>
+	</p>
+
+	<p> 6.
+		<input type="button" onclick="randomNumberGenerator()" value="Random Number"> Display a random number between 1 and 10.
+		<span id="randomNumber"></span>
+	</p>
+
+	<p>
+		<input type="reset" name="Reset" id="button" value="Try Again" onclick="clearFields()">
+	</p>
 </form>
 </body>
 </html>
