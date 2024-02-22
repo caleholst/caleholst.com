@@ -16,17 +16,19 @@
 	<script>
 		let count = 0;	
 		
-
+		// #1 get the value of the first text box and sets it as the value of the third when the button is clicked
 		function getValueOne() {
 			let numberOne = document.querySelector("#value1").value;
 			document.querySelector("#displayValue1").value = numberOne;
 		}
 
+		// #2 get the value of the second text box and sets it as the value of the fourth when the button is clicked
 		function getValueTwo() {
 			let numberTwo = document.querySelector("#value2").value;
 			document.querySelector("#displayValue2").value = numberTwo;
 		}
 
+		// #3 multipies the inputed numbers then displays them in a span
 		function multiplyValues() {
 			let numberOne = document.querySelector("#value1").value;
 			let numberTwo = document.querySelector("#value2").value;
@@ -36,6 +38,7 @@
 			document.querySelector("#displayMultiplication").textContent = solution;
 		}
 
+		// #4 adds the inputed numbers then displays them in a span
 		function addValues() {
 			let numberOne = document.querySelector("#value1").value;
 			let numberTwo = document.querySelector("#value2").value;
@@ -46,27 +49,26 @@
 			document.querySelector("#displayAddition").textContent = solution;
 		}
 
+		// #5 adds to the global variable count +1 every time button is clicked
 		function addToCount() {
 			count = count + 1 // can you not do count++ in javascript ? 
 			document.querySelector("#counterAdder").textContent = count;
 		}
 
+		//  #6 uses the math class to generate a random number from 1 to 10 then display in a span
 		function randomNumberGenerator() { 
 			let randomInt = Math.floor(Math.random() * 10) + 1;
 			document.querySelector("#randomNumber").textContent = randomInt;
 		}
 
+		// #7 sets all the fields to nothing 
 		function clearFields() {
 			let clearField = ""
 			document.querySelector("#displayMultiplication").textContent = clearField;
 			document.querySelector("#displayAddition").textContent = clearField;
 			document.querySelector("#counterAdder").textContent = clearField;
 			document.querySelector("#randomNumber").textContent = clearField;
-
 		}
-
-
-
 	</script>
 </head>
 
