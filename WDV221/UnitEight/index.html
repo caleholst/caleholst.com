@@ -1,0 +1,80 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WDV221 Intro Javascript - IF Statements and Validations</title>
+    <script src="compareFunctions.js"></script>
+</head>
+
+<body>
+	<h2>WDV221 Intro Javascript</h2>
+	<h3>IF Statements and Validations </h3>
+	<p>Please complete the following exercises on this page. When complete post this page to your  server. Make a link in your WDV221 homework  page for this assignment. </p>
+	<p>Include a comment in each script with the exercise number and a description of what the script is supposed to do.</p>
+	<div>
+		<form id="nameForm" name="nameForm" method="post" action="">
+			<fieldset>
+			<legen>Exercise 1: Compare Names </legen>
+			<p>
+				<label for="name1">Name 1: </label>
+				<input type="text" name="name1" id="name1">
+			</p>
+			<p>
+				<label for="name2">Name 2: </label>
+				<input type="text" name="name2" id="name2">
+			</p>
+			<p>Result: <span id="compareNamesResult"></span></p>
+			<p>
+				<input type="button" value="Compare Names" onclick="compareNames()">
+				<input type="reset" name="Reset" id="button" value="Reset" onclick="resetButton()">
+			</p>
+			</fieldset>
+		</form>
+
+		<p>Compare Names Instructions:</p>
+		<ol>
+            <li>Create a function called compareNames( ).</li>
+            <li>The function will compare the two input values from the form above.</li>
+            <li>The comparison should be case insensitive.</li>
+            <li>The results should display &quot;Same&quot; or &quot;Different&quot;.</li>
+            <li>The input fields should be validated. The validations should not allow an empty field. </li>
+            <li>Use a span element and its .innerHTML property to display the results.</li>
+            <li>Provide a reset function that will reset the form and results.</li>
+            <li>Place functions in an external script file called compareFunctions.js.</li>
+		</ol>	
+	</div>
+	<div>
+		<form id="numberForm" name="numberForm" method="post" action="">
+			<fieldset>
+			<legen>Exercise 2: Compare Numbers </legen>
+			<p>
+				<label for="num1">Number 1: </label>
+				<input type="text" name="num1" id="num1">
+			</p>
+			<p>
+				<label for="num2">Number 2: </label>
+				<input type="text" name="num2" id="num2">
+			</p>
+			<p>Result: <span id="CompareNumberResult"> </span>  </p>
+			<p>
+				<input type="button" value="Compare Numbers" onclick="compareNumbers()">
+				<input type="reset" name="Reset" id="button" value="Reset" onclick="resetButton2()">
+			</p>
+			</fieldset>
+		</form>
+
+		<h3>Compare Numbers Instructions:</h3>
+		<ol>
+            <li>Create a function called compareNumbers( ).</li>
+            <li>The function will compare the two input values from the form above.</li>
+            <li>The input fields should be validated. The validations should not allow an empty field, the input must be numeric and it should only allow integers.</li>
+            <li>The function should display the larger of the two numbers OR "Equal" if both values are the same. </li>
+            <li>Use a span element and its .innerHTML property to display the results.</li>
+            <li>Provide a reset function that will reset the form and results.</li>
+            <li>Place functions in an external script file called compareFunctions.js.</li>
+		</ol>	
+	</div>
+
+</body>
+</html>
