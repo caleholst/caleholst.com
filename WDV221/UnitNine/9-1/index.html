@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDV221 Intro JavaScript - String and Date Objects</title>
+    <!-- The Friendly Date problem was confusing, I think I did what it was asking ?  -->
+    <style>
+        form {
+            width:500px;
+            margin-left:auto;
+            margin-right:auto;
+            background-color:beige;
+            padding:10px;
+        }
+
+        .flexContainer {
+            display:flex;
+            flex-direction: column;
+            align-items:center;
+        }
+
+        .flexContainer input {
+            width:300px;
+            margin-bottom: 10px;
+        }
+
+        form section div {
+            margin-bottom:10px;
+        }
+		
+		footer {
+			text-align: center;
+		}
+
+        .blue-text {
+        background-color: rgb(147, 147, 252);
+        }
+
+    </style>
+    <script>
+
+        function verification() {
+            let result = document.querySelector("#inEmail").value;
+            if (result === "") {
+                result = "Invalid: you have to enter something";
+                document.querySelector('#emailAddress').innerHTML = "";
+                document.querySelector('#username').innerHTML = "";
+                document.querySelector('#domain').innerHTML = "";
+                document.querySelector('#validation').innerHTML = result;
+            } else if (!isNaN(result)) {
+                result = "Invalid: Integers not allowed";
+                document.querySelector('#emailAddress').innerHTML = "";
+                document.querySelector('#username').innerHTML = "";
+                document.querySelector('#domain').innerHTML = "";
+                document.querySelector('#validation').innerHTML = result;
+            } else if (!result.includes('@') || !result.includes('.')) {
+                result = "Please enter a valid email";
+                ddocument.querySelector('#emailAddress').innerHTML = "";
+                document.querySelector('#username').innerHTML = "";
+                document.querySelector('#domain').innerHTML = "";
+                document.querySelector('#validation').innerHTML = result;
+            } else if (result.indexOf('@') === 0 || result.lastIndexOf('@') === result.length - 1 ||
+                        result.slice(result.indexOf('@') + 1, result.indexOf('@') + 2) === '.' ||
+                        result.slice(result.lastIndexOf('.')).length <= 1 ||  result.indexOf('@') > result.indexOf('.')) {
+                result = "Please enter a valid email";
+                document.querySelector('#emailAddress').innerHTML = "";
+                document.querySelector('#username').innerHTML = "";
+                document.querySelector('#domain').innerHTML = "";
+                document.querySelector('#validation').innerHTML = result;
+            } 
+            
+    }
+
+
+        function displayEmail() {
+            
+            let result = document.querySelector("#inEmail").value;
+            document.querySelector('#emailAddress').innerHTML = result;
+            verification(result)
+        }
+
+        function displayUsername() {
+            let result = document.querySelector("#inEmail").value;
+            let username = result.split('@')[0];
+            document.querySelector('#username').innerHTML = username;
+            verification(result)
+        }
+
+        function displayDomain() { 
+            let result = document.querySelector("#inEmail").value;
+            let domain = result.split('@')[1];
+            document.querySelector('#domain').innerHTML = domain;
+            
+            if (domain.includes('.edu')) {
+            document.querySelector('#domain').classList.add('blue-text');
+                } else {
+                document.querySelector('#domain').classList.remove('blue-text');
+            }
+
+            verification(result)
+        }
+
+        function resetButton() {
+            document.querySelector('#emailAddress').innerHTML = "";
+            document.querySelector('#username').innerHTML = "";
+            document.querySelector('#domain').innerHTML = "";
+            document.querySelector('#validation').innerHTML = "";
+        }
+
+
+
+
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+        function formatMMDDYYYY(inputDate){
+            
+            const day = days[inputDate.getDay()];
+            const month = months[inputDate.getMonth()];
+            const date = inputDate.getDate();
+            const year = inputDate.getFullYear();
+            return `${day}, ${month} ${date}, ${year}`;
+        }
+
+        function displayTodaysDate() {
+            const today = new Date();
+            const formattedDate = formatMMDDYYYY(today);
+            document.querySelector('#todayDate').innerHTML = formattedDate;
+            
+        }
+
+        function friendlyDate(inputDate) {
+            const dayOfWeek = inputDate.getDay();
+            const month = inputDate.getMonth();
+            const day = inputDate.getDate();
+            const year = inputDate.getFullYear();
+            const formattedDate2 = `${days[dayOfWeek]} ${months[month]} ${day}, ${year}`;
+            return formattedDate2;
+        }
+
+        function displayFriendlyDate() {
+            const today = new Date(2024, 2, 19); // March 19, 2024
+            const formattedDate2 = friendlyDate(today);
+            document.querySelector('#friendlyDate').innerHTML = formattedDate2;
+            
+        }
+
+        function resetDateExamples() {
+            document.querySelector('#todayDate').textContent = "";
+            document.querySelector('#friendlyDate').textContent = "";
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            copyright();
+        });
+
+
+        function copyright(){
+            let currentYear = new Date()
+            currentYear = currentYear.getFullYear();
+            document.querySelector('#copyrightYear').innerHTML = currentYear;
+        }
+
+    </script>
+</head>
+<body>
+    <h1>WDV221 Intro JavaScript</h1>
+    <h2>JavaScript Objects - String and Date Objects</h2>
+	<section class="stringAssignment">
+		<h3>String Object Assignment:</h3>
+		<form method="post" action="#">
+			<p>
+				<label for="inEmail">Enter an Email Address: </label>
+            
+				<input type="email" name="inEmail" id="inEmail">
+			</p>
+            <p style="text-align: center;">
+                <span id="validation"> </span>
+            </p>
+
+			<p class="flexContainer">
+				<input type="button" value="Display Email Address" onclick="displayEmail()"> 
+				<input type="button" value="Display the Username of the Email Address" onclick="displayUsername()"> 
+				<input type="button" value="Display the Domain name of the Email Address" onclick="displayDomain()"> 
+			</p>
+
+			<section class="flexContainer">
+				<div>Email Address: <span id="emailAddress"></span></div> 
+				<div>Username:<span id="username"> </span> </div> 
+				<div>Domain Name:<span id="domain"> </span></div> 
+			</section>
+
+			<p style="text-align: center;">
+				<input type="reset" value="Enter New Email" onclick="resetButton()">
+			</p>
+		</form>
+
+		<h3>String Instructions:</h3>
+		<ol>
+			<li>All the functions will use the email input into the form. The field cannot be blank and must be formatted as a valid email address.</li>
+			<li>Create a function that will display the email address on the Email Address: line. Call this function with the Display Email Address button. </li>
+			<li>Create a function that will display just the username portion of the email address on the Username: line. Call this function with the Display UserName button. Example student@dmacc.edu will display 'student'.</li>
+			<li>Create a function that will display just the domain name portion of the mail address on the Domain Name: line. Call this function with the Display Domain name button. Using the above example will display 'dmacc.edu'.</li>
+			<li>If the email address has a top level domain of .edu change the Domain Name display to a light blue background.</li>
+			<li>The "Enter New Email" button should return the form and the display fields to their original values.</li>
+		</ol>
+	</section>
+	
+
+	
+	<section>
+		<h3>Date Object Assignment:</h3>
+		<div>
+			<p>
+				<button onclick="displayTodaysDate()">Todays Date</button>
+				<span id="todayDate"></span>
+			</p>
+		</div>
+			<p>
+				<button onclick="displayFriendlyDate()">Friendly Date</button>
+                Today is: <span id="friendlyDate"></span>
+			</p>
+		<div>
+			
+		<p>
+			<button onclick="resetDateExamples()">Reset Date Examples</button>
+		</p>
+			
+		</div>
+		<h3>Date Instructions:</h3>
+		<p>1. Create a function called formatMMDDYYYY(inputDate)</p>
+		<ol>
+			<li>the function will accept an input parameter that is a <b>date object</b></li>
+			<li>use the methods of the Date object to get the month, date and year from the input date object</li>
+			<li>concatenate the pieces together to format the string mm/dd/yyyy</li>
+			<li>return the formatted string</li>
+		</ol>
+		<p>Display todays date next to the Todays Date button using the formatMMDDYYYY().</p>
+		<p>The Reset Date Examples should call a function to clear the date examples.</p>
+		<p>2. Create a function called friendlyDate(inputDate)</p>
+		<ol>
+			<li>the function will accept a date object as input</li>
+			<li>it will produce and return a string formatted like "Saturday December 18, 2023"</li>
+		</ol>
+		<p>Display todays date when you click the Friendly Date button using the friendlyDate().</p>
+	</section>
+	
+	<section>
+		<p>3. Create a JavaScript function that will always display the current year in the Copyright statement of the footer.</p>
+	</section>
+
+	<footer>
+		<p>Copyright &#169 <span id="copyrightYear"></span> DMACC All rights reserved.</p>
+	</footer>
+
+</body>
+</html>
