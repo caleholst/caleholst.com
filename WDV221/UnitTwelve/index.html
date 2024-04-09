@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Test</title>
+    <script src="BankAccount.js"></script>
+</head>
+<body>
+    <div id="balance"></div>
+    <div id="accountInfo"></div>
+
+
+    <script>
+        const newAccount = new BankAccount(1000);
+        newAccount.accountName = "Cale Holst";
+        newAccount.accountNumber = "345345";
+        newAccount.deposit(5000);
+    
+        let balanceDiv = document.querySelector('#balance');
+        balanceDiv.textContent = "Current Balance: " + newAccount.balance();
+    
+        let accountInformation = document.querySelector('#accountInfo');
+        let accountInfoMethod = newAccount.accountInfo();
+        accountInformation.textContent = "Account Information: " + accountInfoMethod;
+    
+    </script>
+</body>
+</html>
