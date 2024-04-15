@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13-1</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        let bookTitles = ["Beginning Javascript", "Logic with ES6", "Javascript Ojbects Made Easy"];
+        let bookPrices = [19.99, 29.49, 999.99];
+        let bookAuthor = ["Smith", "Johson-Parker", "Westin" ];
+
+        function formatCurrency(amount) {
+            return "$" + amount.toFixed(2);
+        }
+
+        function studentDiscountPrice(price) {
+            let studentDiscount =  formatCurrency(price * 0.8);
+            return studentDiscount; 
+        }
+
+        let bookA = {
+            book_title: bookTitles[0],
+            book_prices: bookPrices[0],
+            book_author: bookAuthor[0],
+
+            studentDiscountPrice: function() {
+                return studentDiscountPrice(bookPrices[0])
+            }
+        }
+
+        let bookB = {
+            book_title: bookTitles[1],
+            book_prices: bookPrices[1],
+            book_author: bookAuthor[1],
+
+            studentDiscountPrice: function() {
+                return studentDiscountPrice(bookPrices[1])
+            }
+        }
+
+        let bookC = {
+            book_title: bookTitles[2],
+            book_prices: bookPrices[2],
+            book_author: bookAuthor[2],
+
+            studentDiscountPrice: function() {
+                return studentDiscountPrice(bookPrices[2])
+            }
+        }
+
+        console.log(bookA);
+        console.log(bookB);
+        console.log(bookC);
+
+        let booksArrayObject = {
+            books: [bookA, bookB, bookC]
+        };
+
+        let output = "<ul>";
+        booksArrayObject.books.forEach(function(book) {
+            output += "<li>" + book.book_title + " by " + book.book_author + " - Price: " + book.studentDiscountPrice() + "</li>";
+        });
+        output += "</ul>";
+        document.body.innerHTML = output;
+
+        let bookAJSON = JSON.stringify(bookA);
+        console.log("JavaScript Object (bookA):", bookA);
+        console.log("JSON Object (bookAJSON):", bookAJSON);
+
+
+        let booksArrayJSON = JSON.stringify(booksArrayObject);
+        console.log("JavaScript Object (booksArrayObject):", booksArrayObject);
+        console.log("JSON Object (booksArrayJSON):", booksArrayJSON);
+    });
+    </script>
+</head>
+<body> 
+</body>
+</html>
