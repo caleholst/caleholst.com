@@ -1,0 +1,118 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Calculations and Textfields</title>
+
+<style>
+
+body {background-color:#C99;
+}
+
+fieldset {
+	width:350px;
+	margin:auto;	
+}
+
+
+</style>
+
+<script>
+    var account = {
+        balance: 0,
+        deposit: function(amount) {
+            if (isNaN(amount)) {
+                alert("Please enter a number.");
+                return;
+            }
+            this.balance += parseFloat(amount);
+            this.displayBalance();
+        },
+        withdraw: function(amount) {
+            if (isNaN(amount)) {
+                alert("Please enter a number.");
+                return;
+            }
+            if (amount > this.balance) {
+                alert("Cannot withdraw more than you have!");
+                return;
+            }
+            this.balance -= parseFloat(amount);
+            this.displayBalance();
+        },
+        displayBalance: function() {
+            var balanceField = document.getElementById('balanceField');
+            balanceField.innerText = "Your Balance: $" + this.balance.toFixed(2);
+        }
+    };
+    </script>
+</head>
+
+<body>
+<h2>WDV221 Intro Javascript</h2>
+
+<h3>Team Assignment - Create an ATM</h3>
+<p>In this project you are going to create an ATM machine using Javascript. You can add amounts and withdraw amounts from your current balance. </p>
+<form id="form2" name="form2" method="post" action="">
+  <fieldset>
+      <p>
+        Enter an amount: 
+        <input type="text" name="inAmt" id="inAmt" />
+      </p>
+      <p>
+        <input type="button" name="button3" id="button3" value="Deposit" onclick="account.deposit(document.getElementById('inAmt').value)" />
+        <input type="button" name="button4" id="button4" value="Withdraw" onclick="account.withdraw(document.getElementById('inAmt').value)" />
+        <input type="button" name="button5" id="button5" value="Display Balance" onclick="account.displayBalance()" />
+      </p>
+      <p>Your Balance: <span id="balanceField"></span></p>
+      <p>
+        <input type="reset" name="button2" id="button2" value="Reset" />
+        <!--
+          <button>Display Transactions:</button>
+        -->
+      </p>
+      <!--
+      <p>Current Transactions:</p>
+      -->
+  </fieldset>
+</form>
+<h3>Basic Instructions:</h3>
+<p>1. Create a global variable called accountBalance. Initialize it to 0. </p>
+<p>2. The input amount field should follow the following rules:</p>
+  <ol>
+    <li>The amount cannot be negative. If so, display an error message &quot;Amount cannot be negative.&quot;.</li>
+  </ol>
+<p>3. Create a deposit function that will process a deposit to the account. </p>
+  <ol>
+    <li>This will add the amount entered in the Amount field to the accountBalance.</li>
+    <li>Display the updated balance.</li>
+  </ol>
+<p>4. Create a withdraw function that will process a withdrawl from the account.</p>
+  <ol>
+    <li>The amount entered cannot be less than the balance amount. If so, display an error message &quot;Cannot withdraw more than you have!&quot;.</li>
+    <li> This will subtract the amount entered in the Amount field from the accountBalance.</li>
+    <li>Display the updated balance.</li>
+  </ol>
+<p>5. Create a displayBalance function that will display the current value of accountBalance in the Balance field.
+  <ol>
+    <li>The balance amount displayed to the page should be formatted as currency.</li>
+    <li>Call this function whenever a deposit or withdrawal is processed to display the current balance.</li>
+    <li>Call this function from the Balance button.</li>
+  </ol>   
+</p>
+<p>6. Use the combined operators for the deposit and withdraw processes. </p>
+<p>7. Use parseInt( ) or parseFloat( ) as needed.</p>
+<h3>Intermediate Instructions:</h3>
+<ol>
+  <li>Use a JavaScript object to store the account information.</li>
+  <li>Validate the input amount. It must be a number. If not, display an error message &quot;Please enter a number.&quot;.</li>
+</ol>
+
+<h3>Advanced Instructions:</h3>
+<ol>
+  <li>Use the AccountBalance class from the assignments to store the information.</li>
+  <li>Captures the transactions. Add a button that will display the transactions on the screen.</li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,70 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript - Assignment</title>
+
+<style>
+
+    body {
+        background-color:beige;
+    }
+
+    #container {
+        width:800px;
+        margin-left: auto;
+        margin-right:auto;
+        background-color:blanchedalmond;
+        padding: 5px;
+    }
+
+    .highlightTitle	{
+        font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+        font-style:italic;
+        font-size:14px;
+        text-decoration:underline;
+        color:#096;
+    }
+
+</style>
+</head>
+
+<body>
+    <div id="container">
+    <h2>WDV221 Intro Javascript</h2>
+    <h3>UNIT-14 jQuery Assignment</h3>
+
+    <p>Please complete the following exercise on this page using jQuery commands. When complete post this page to your  server. Make a link in your WDV221 homework  page for this assignment. </p>
+    <p>Use the form fields for the input values. For following exercise create a function what will be activated by the button.  </p>
+
+    <h3>Instructions:</h3>
+    <ul>
+        <li>Use a jQuery CDN for the library</li>
+        <li>Assign the event handler to the buttons using jQuery</li>
+        <li>Retrieve the values from the form and process as directed.</li>
+        <li>Display the results to the page</li>
+        <li>The Reset button should also clear the results area of the page</li>
+    </ul>
+
+    <form name="form1" method="post" action="#">
+        <p>
+            <label for="inValue1">Enter a number for value1: </label>
+            <input type="text" name="inValue1" id="inValue1">
+        </p>
+        <p>
+            <label for="inValue2">Enter a number for value 2: </label>
+            <input type="text" name="inValue2" id="inValue2">
+        </p>
+        <p>
+            Results: <span id="resultsDisplay"></span>
+        </p>
+
+        <p>
+            <input type="submit" value="Addition">
+            <input type="reset" name="Reset" id="button" value="Reset">
+        </p>
+    </form>
+    </div>
+</body>
+</html>
