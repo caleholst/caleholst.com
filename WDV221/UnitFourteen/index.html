@@ -28,6 +28,25 @@
     }
 
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+
+        $('#AdditionButton').click(function() {
+            let value1 = document.querySelector("#inValue1").value;
+            let value2 = document.querySelector('#inValue2').value;
+            let result = parseInt(value1) + parseInt(value2);
+            $('#resultsDisplay').text(result);
+        });
+
+        $('#button').click(function(){
+            $('#resultsDisplay').text(" ");
+        });
+    });
+
+
+</script>
 </head>
 
 <body>
@@ -61,7 +80,7 @@
         </p>
 
         <p>
-            <input type="submit" value="Addition">
+            <input type="button" value="Addition" id="AdditionButton">
             <input type="reset" name="Reset" id="button" value="Reset">
         </p>
     </form>
