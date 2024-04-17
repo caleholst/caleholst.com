@@ -6,7 +6,6 @@
 <title>WDV221 Intro Javascript - Calculations and Textfields</title>
 
 <style>
-
 body {background-color:#C99;
 }
 
@@ -17,36 +16,109 @@ fieldset {
 
 
 </style>
-
 <script>
-    var account = {
-        balance: 0,
-        deposit: function(amount) {
-            if (isNaN(amount)) {
-                alert("Please enter a number.");
-                return;
-            }
-            this.balance += parseFloat(amount);
-            this.displayBalance();
-        },
-        withdraw: function(amount) {
-            if (isNaN(amount)) {
-                alert("Please enter a number.");
-                return;
-            }
-            if (amount > this.balance) {
-                alert("Cannot withdraw more than you have!");
-                return;
-            }
-            this.balance -= parseFloat(amount);
-            this.displayBalance();
-        },
-        displayBalance: function() {
-            var balanceField = document.getElementById('balanceField');
-            balanceField.innerText = "Your Balance: $" + this.balance.toFixed(2);
-        }
-    };
-    </script>
+  /*
+  const accountBalance = {balance:0,
+    displayBalance:function(){
+      
+    document.querySelector("#totalBalance").innerText = "$ " + this.balance.toFixed(2);
+    },
+  deposit:function(){
+    let inputAmount = parseFloat(document.querySelector("#inAmt").value);
+    if(!isNaN(inputAmount)){
+    if(inputAmount > 0){
+   this.balance += inputAmount;
+   this.displayBalance();
+
+     }
+    else{
+      alert("Can not enter a negative")
+    } }
+    else{
+      alert("Must Enter a Number")
+    }
+  },
+  withdrawl: function(){
+    let inputAmount = parseFloat(document.querySelector("#inAmt").value);
+    if(!isNaN(inputAmount)){
+    if(inputAmount >0 ){
+    if(inputAmount <= this.balance){
+    this.balance -= inputAmount;
+      this.displayBalance();
+  }
+    else{
+      alert("You can not take more than you have")
+    }
+  }  else{
+    alert("Can not enter a negative")
+  }
+}
+else{
+  alert("Must Enter a Number")
+}
+  }
+  };
+  */
+ class AccountBalance {
+  constructor() {
+        this.balance = 0;
+        this.transactions = [];
+    }
+
+     displayBalance(){
+    document.querySelector("#totalBalance").innerText = "$ " + this.balance.toFixed(2);
+  }
+  displayTransactions(){
+    let html = "<h3>History<h3/><ul>"
+   this.transactions.forEach(transaction =>{
+    html += `<li>${transaction.type}: $${transaction.amount.toFixed(2)}</li>`;
+    });
+    html += "</ul>";
+    document.querySelector("#transactionID").innerHTML = html
+
+  }
+   deposit(){
+    
+    let inputAmount = parseFloat(document.querySelector("#inAmt").value);
+    if(!isNaN(inputAmount)){
+    if(inputAmount >0){
+      this.balance +=inputAmount
+      this.transactions.push({type: "Deposit", amount: inputAmount });
+      this.displayBalance();
+ 
+     }
+    else{
+      alert("Can not enter a negative")
+    } }
+    else{
+      alert("Must Enter a Number")
+
+    }
+  }
+  withdrawl(){
+    let inputAmount = parseFloat(document.querySelector("#inAmt").value);
+    if(!isNaN(inputAmount)){
+    if(inputAmount >0 ){
+    if(inputAmount <= this.balance){
+      this.balance -= inputAmount;
+      this.transactions.push({type: "Withdrawal", amount: inputAmount });
+      this.displayBalance();
+  }
+    else{
+      alert("You can not take more than you have")
+    }
+  }  else{
+    alert("Can not enter a negative")
+  }
+}
+else{
+  alert("Must Enter a Number")
+}
+  }
+ }
+
+ const accountBalance = new AccountBalance();
+</script>
 </head>
 
 <body>
@@ -61,20 +133,19 @@ fieldset {
         <input type="text" name="inAmt" id="inAmt" />
       </p>
       <p>
-        <input type="button" name="button3" id="button3" value="Deposit" onclick="account.deposit(document.getElementById('inAmt').value)" />
-        <input type="button" name="button4" id="button4" value="Withdraw" onclick="account.withdraw(document.getElementById('inAmt').value)" />
-        <input type="button" name="button5" id="button5" value="Display Balance" onclick="account.displayBalance()" />
+        <input type="button" name="button3" id="button3" value="Deposit" onclick="accountBalance.deposit()" />
+        <input type="button" name="button4" id="button4" value="Withdraw" onclick="accountBalance.withdrawl()"/>
+        <input type="button" name="button5" id="button5" value="Display Balance" onclick="accountBalance.displayBalance()"/>
+        <input type="button" name="button6" id="button6" value="Display Transaction" onclick="accountBalance.displayTransactions()"/>
       </p>
-      <p>Your Balance: <span id="balanceField"></span></p>
+      <p>Your Balance:<span id="totalBalance"> </span></p>
       <p>
         <input type="reset" name="button2" id="button2" value="Reset" />
-        <!--
-          <button>Display Transactions:</button>
-        -->
+
       </p>
-      <!--
+
       <p>Current Transactions:</p>
-      -->
+       <div id="transactionID"></div>
   </fieldset>
 </form>
 <h3>Basic Instructions:</h3>
@@ -114,5 +185,49 @@ fieldset {
   <li>Use the AccountBalance class from the assignments to store the information.</li>
   <li>Captures the transactions. Add a button that will display the transactions on the screen.</li>
 </ol>
+<script>
+  /*
+    function displayBalance(){
+    document.querySelector("#totalBalance").innerText = "$ " + accountBalance.toFixed(2);
+  }
+  function deposit(){
+    
+    let inputAmount = parseFloat(document.querySelector("#inAmt").value);
+    if(!isNaN(inputAmount)){
+    if(inputAmount >0){
+   amount = parseFloat(document.querySelector("#inAmt").value);
+   accountBalance += amount;
+   displayBalance();
+ 
+     }
+    else{
+      alert("Can not enter a negative")
+    } }
+    else{
+      alert("Must Enter a Number")
+
+    }
+  }
+  function widthrawl(){
+    let inputAmount = parseFloat(document.querySelector("#inAmt").value);
+    if(!isNaN(inputAmount)){
+    if(inputAmount >0 ){
+    if(inputAmount <= accountBalance){
+    accountBalance = accountBalance -= parseFloat(document.querySelector("#inAmt").value);
+      displayBalance();
+  }
+    else{
+      alert("You can not take more than you have")
+    }
+  }  else{
+    alert("Can not enter a negative")
+  }
+}
+else{
+  alert("Must Enter a Number")
+}
+  }
+*/
+</script>
 </body>
 </html>
