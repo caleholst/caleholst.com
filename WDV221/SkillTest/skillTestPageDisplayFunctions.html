@@ -1,0 +1,74 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WDV221 Intro Javascript</title>
+    <style>
+        #container	{
+            width:1028px;
+            margin:auto;
+            background-color:#3CF;	
+        }
+
+        footer p {
+          text-align: center;
+        }
+    </style>
+    <script src="PageDisplayJS.js"></script>
+
+</head>
+
+<body>
+
+<div id="container">
+
+	<header>
+    	<h1>WDV221 Intro Javascript</h1>
+    	<h2>Skill Test - Implement Page Display functions</h2>
+    </header>
+    
+    <main>
+        <div id="greetingBlock"></div>
+        
+        <h2>Welcome back! Today is: <span id="date"> </span> </h2>
+        
+        <h3>Instructions:</h3>
+            <ol>
+            <li>Implement the greeting( ) on this page.
+                <ul>
+                    <li>Use the external JavaScript file to access the function.</li>
+                    <li>The greeting() should start as soon as the page loads.</li>
+                    <li>The output from the greeting() should display in the div element with an id='greetingBlock'.</li>
+                </ul>
+            </li>
+            <li>Display today's date in the h2 element.</li>
+                <ul>
+                    <li>The date should display in the following format: Sunday June 17, 2015</li>
+                    <li>Create/use a function(s) that will display today's date on the page in place of (todays date).</li>
+                    <li>Attach these to this page in an external javascript file.</li>
+                </ul>
+            </li>
+            <li>Update the Copyright statement on the page.
+                <ul>
+                    <li>Implement a Copyright symbol on this page in place of (copyright symbol)</li>
+                    <li>Display the current year in the copyright in place of 'YEAR'.</li>
+                </ul>
+            </li>
+            </ol>
+	</main>
+    
+    <footer>
+        <p>Copyright<span id="copyright"></span><span id="year"> </span> DMACC All rights reserved</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
+<script>
+    document.querySelector("#date").textContent = getFormattedDate();
+    document.querySelector("#copyright").textContent = getCopyright();
+    document.querySelector("#year").textContent = getYear();
+    window.addEventListener('load', greeting);
+</script>

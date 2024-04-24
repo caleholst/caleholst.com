@@ -1,0 +1,97 @@
+
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Skill Test Form Calculations</title>
+	<style>
+	
+		form {
+			width:500px;
+			border: thin solid blue;
+		}
+		
+		form h3 {
+			text-align: center;
+		}
+	
+	
+	</style>
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Skill Test - Form Calculations</h2>
+<form id="form1" name="form1" method="post" action="" onkeypress="return event.keyCode != 13;"> 
+    <!-- I used ChatGPT for the "onkeypress="return event.keyCode != 13;", When I pressed enter it would try to submit the form and this was the solution it gave me -->
+	<h3>Purchase Orders</h3>
+	<p>
+		<label for="products">Products available to Purchase</label>
+		<select name="products" id="products">
+			<option value="">Select a Product</option>
+			<option value="1.99">Pen</option>
+			<option value="0.49">Pencil</option>
+			<option value="5.99">Red Stapler</option>
+		</select>
+	</p>
+	<p>
+		<label for="quantity">Number Purchased: </label>
+		<input type="number" name="quantity" id="quantity"/>
+	</p>
+
+	<p>
+		<input type="button" name="button" id="button" value="Submit Order" onclick="calculateSalePrice()" />
+		<input type="reset" name="button2" id="button2" value="Reset" />
+		<input type="button" name="button3" id="button3" value="Clear Order" onclick="clearOrder()" />
+	</p>
+</form>
+
+	<p>Sale Price for this purchase: <span id="salePrice"></span></p>
+	
+	<p>Total Sales for all purchases: <span id="totalSales">$0.00</span></p>
+
+<h3>Instructions: Modify this page so that the form works as described.</h3>
+<ul>
+  <li>The customer will select the product using the drop down list. The product price is in the value attribute.</li>
+  <li>The Number Purchased field should be a number and should only allow whole numbers.</li>
+  <li>When the customer clicks "Submit Order", calculate the Sale Price (product price * number purchased) and display it on the Sale Price line.</li>
+  <li>When the customer clicks "Submit Order", the form will add the 'salePrice' to the Total Sales value and display the new value on the Total Sales for all Purchases line. </li>
+  <li>All dollar amounts should be formatted as US currency.</li>
+  <li>The Reset button should clear the form fields and the 'salePrice' field.</li>
+  <li>The Clear Order button should clear the form fields, the 'salePrice', the 'totalSales' and start a new Total Sales.</li>
+</ul>
+<p>&nbsp;</p>
+<script>
+    function calculateSalePrice() {
+        let productSelect = document.querySelector("#products");
+        let selectedProduct = productSelect.options[productSelect.selectedIndex];
+
+        if (selectedProduct.value === "") {
+        alert("Please select a product");
+        return;
+    }
+
+        let productPrice = parseFloat(document.querySelector("#products").value);
+        let quantity = parseInt(document.querySelector("#quantity").value);
+
+        if (quantity < 1 || isNaN(quantity)) {
+        alert("Please enter a postive number greater than 0");
+        return;
+        }
+        
+        let salePrice = productPrice * quantity;
+        document.querySelector("#salePrice").textContent = "$" + salePrice.toFixed(2);
+    
+        let totalSalesElement = document.querySelector("#totalSales");
+        let currentTotalSales = parseFloat(totalSalesElement.textContent.replace("$", ""));
+        let newTotalSales = currentTotalSales + salePrice;
+        totalSalesElement.textContent = "$" + newTotalSales.toFixed(2);
+    }
+    
+    function clearOrder() {
+        document.querySelector("#form1").reset();
+        document.querySelector("#salePrice").textContent = "";
+        document.querySelector("#totalSales").textContent = "0.00";
+    }
+    </script>
+</body>
+</html>
