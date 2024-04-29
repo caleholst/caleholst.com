@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Skill Test Preferences</title>
+<style>
+
+	#container {
+		width:1028px;
+		margin:auto;
+	}
+	
+	ul	{
+		list-style:none;	
+	}
+</style>
+
+<script>
+	let pageFonts = ['Garamond', 'Georgia', 'Verdana'];
+
+	function populateFontDropdown() {
+        let fontDropdown = document.querySelector('#fontDropdown');
+
+        pageFonts.forEach(function(font) {
+            let option = document.createElement('option');
+            option.textContent = font;
+            option.value = font;
+            fontDropdown.appendChild(option);
+        });
+	}
+
+	function changeFont(selectedFont) {
+        document.body.style.fontFamily = selectedFont;
+	}
+
+	function changeColor(inColor) {
+		document.body.style.backgroundColor = inColor;	
+	}
+
+	window.onload = function() {
+		populateFontDropdown();
+
+		let fontDropdown = document.querySelector('#fontDropdown');
+		fontDropdown.addEventListener('change', function() {
+            changeFont(this.value);
+		});
+
+		let selections = document.querySelectorAll('input[type="radio"]');
+		selections.forEach(function(radioButton) {
+			radioButton.addEventListener('click', function() {
+				if (this.checked) {
+					changeColor(this.value);
+				}
+			});
+		});
+	}
+</script>
+
+</head>
+
+<body>
+
+<div id="container">
+
+	<header>
+        <h1>WDV221 Intro Javascript</h1>
+        <h2>Skill Test - Setting Preferences</h2>
+    </header>
+    
+
+    <section>
+        <h3>Instructions: Change background colors:</h3>
+        <ol>
+            <li>Modify the page as needed to change the background color when a different color is selected.</li>
+            <li>Use the changeColor( ) function to change the background color when a button is selected.</li>
+        </ol>
+    
+        <ul>Choose your background color:
+            <li>
+                <input type="radio" name="radio" id="radio" value="red">
+                <label for="radio">Red</label>
+            </li>
+            <li>
+                <input type="radio" name="radio" id="radio3" value="green">
+                <label for="radio3">Green </label>
+            </li>
+            <li>
+                <input type="radio" name="radio" id="radio2" value="blue">
+                <label for="radio2">Blue</label>
+            </li>
+        </ul>
+    <section>
+
+	<section>
+        <h3>Instructions: Change font selection:</h3>    
+        <ol>
+            <li>Create an array called pageFonts that contains at least three fonts.</li>
+            <li>Use javascript to populate a drop down list of available fonts.</li>
+            <li>Create a function that will allow the user to select the font of their choice. Once selected, all text on the page will change to the selected font.    </li>
+        </ol> 
+        <p>
+            Choose your font:
+            <select id="fontDropdown">
+
+            </select>
+        </p>
+    </section>
+
+</div>
+</body>
+</html>

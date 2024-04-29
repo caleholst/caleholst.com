@@ -1,0 +1,94 @@
+
+<html>
+
+	<head>
+		<title>WDV221 Intro Javascript</title>
+        <script src="productArrays.js"></script>
+		<script>
+            function Product(name, number, manufacturePrice) {
+                this.prod_name = name;
+                this.prod_number = number;
+                this.prod_manufacture_price = manufacturePrice;
+                this.prodsuggestedRetailPrice = function() {
+                    return this.prod_manufacture_price * 1.67;
+                };
+            }
+
+            let productList = [];
+            
+            for(let i = 0; i < productNames.length; i++) {
+                productList.push(new Product(productNames[i], productNumbers[i], productManPrices[i]));
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+            let productDisplay = document.querySelector('.productDisplay');
+            if (productDisplay) {
+                let numProducts = productList.length;
+                productDisplay.innerHTML = `<p>Number of Products in Product List: ${numProducts}</p>`;
+
+                productList.forEach(product => {
+                let productHTML = 
+                    `<p>
+                        Product: ${product.prod_name}</br>
+                        Product Number: ${product.prod_number}<br>
+                        Product Wholesale Price: $${product.prod_manufacture_price.toFixed(2)}</br>
+                        Product Suggested Retail Price: $${product.prodsuggestedRetailPrice().toFixed(2)}</br>
+                    </p>`;
+                    productDisplay.innerHTML += productHTML;
+                });
+            } 
+        });
+
+            const productToConvert = productList[0]; 
+            const productJSON = JSON.stringify(productToConvert); 
+            console.log(productJSON); 
+		</script>
+	
+	</head>
+	
+	<body>
+		<h1>WDV221 Intro Javascript</h1>
+		<h2>Skill Test - Create and Display Javascript Objects</h2>
+		
+		<h2>Product Inventory List</h2>
+		<div>
+			<h3>EXAMPLE OUTPUT</h3>
+			<p>Number of Products in Product List: 1</p>
+			<p>
+				Product: Standard Keyboard</br>
+				Product Number: std-key<br>
+				Product Wholesale Price: $11.90</br>
+				Product Suggested Retail Price: $19.87</br>
+			</p>
+
+			
+			<h3>PROJECT OUTPUT</h3>
+			<p>Number of Products in Product List ?</p>
+            <div class="productDisplay"></div>
+		
+		</div>
+		<h3>Instructions</h3>
+		<ol>
+			<li>Attach the external script file as the source for your data</li>
+			<li>Using the data provided in the external script file create an array of Product objects called productList. Use the properties/methods defined in the comments to create the Product objects </li>
+			<li>Display the number of objects in the productList array on the page as indicated</li>
+			<li>Use a loop to display the contents of the productList on the page in the div element after the PRODUCT OUTPUT heading</li>
+			<li>The output should follow the same pattern as the example output</li>
+			<li>All prices should be displayed as USD formatted currency</li>
+			<li>Convert one of your Product objects into a JSON formatted object. Display the object in the console</li>
+		</ol>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
